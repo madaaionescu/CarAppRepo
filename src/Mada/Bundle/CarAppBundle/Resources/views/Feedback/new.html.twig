@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+<h1>Feedback from routes</h1>
+ <script>alert('wehew');</script>
+    {{ form(form) }}
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('feedback') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+
+{% endblock %}
+

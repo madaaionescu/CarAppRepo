@@ -1,0 +1,12 @@
+parameters:
+#    mada_car_app.example.class: Mada\Bundle\CarAppBundle\Example
+
+services:
+#    mada_car_app.example:
+#        class: %mada_car_app.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    carapp_user.registration.form.type:
+        class: Mada\Bundle\CarAppBundle\Form\RegistrationType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: carapp_user_registration }
