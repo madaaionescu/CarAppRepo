@@ -1,0 +1,65 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Routes</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Latstart</th>
+                <td>{{ entity.latStart }}</td>
+            </tr>
+            <tr>
+                <th>Longstart</th>
+                <td>{{ entity.longStart }}</td>
+            </tr>
+            <tr>
+                <th>Latstop</th>
+                <td>{{ entity.latStop }}</td>
+            </tr>
+            <tr>
+                <th>Longstop</th>
+                <td>{{ entity.longStop }}</td>
+            </tr>
+            <tr>
+                <th>Datecreated</th>
+                <td>{{ entity.dateCreated|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Ownerid</th>
+                <td>{{ entity.ownerId }}</td>
+            </tr>
+            <tr>
+                <th>Seatsavailable</th>
+                <td>{{ entity.seatsAvailable }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('routes') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('routes_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+    
+        </ul> 
+    {#    randam controllerul#}
+    {{ render_hinclude(controller('MadaCarAppBundle:Feedback:new', {'routeId': entity.id })) }} 
+    {{ render_hinclude(controller('MadaCarAppBundle:Feedback:list',{'routeId': entity.id })) }} 
+  
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('/bundles/madacarapp/js/hinclude-0.9.5/hinclude.js') }}"></script>
+{% endblock %}

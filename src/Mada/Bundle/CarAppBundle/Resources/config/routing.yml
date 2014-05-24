@@ -1,0 +1,31 @@
+mada_car_app_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: MadaCarAppBundle:Default:index }
+    
+    
+#carRoute:
+#    pattern: /car/new
+#    defaults: {_controller: MadaCarAppBundle:Car:new}
+    
+_car:
+    resource: "@MadaCarAppBundle/Controller/CarController.php"
+    type:     annotation
+    
+#usersRoute:
+#    pattern: /users/new
+#    defaults: {_controller: MadaCarAppBundle:Users:new}
+    
+_users:
+    resource: "@MadaCarAppBundle/Controller/UsersController.php"
+    type:     annotation
+
+_routes:
+    resource: "@MadaCarAppBundle/Controller/RoutesController.php"
+    type:     annotation
+  
+_feedback:
+    resource: "@MadaCarAppBundle/Controller/FeedbackController.php"
+    type:     annotation
+    
+    
+        
